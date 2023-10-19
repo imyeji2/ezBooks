@@ -1,0 +1,594 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
+ */
+package view;
+
+import java.awt.Component;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import model.PublisherDAO;
+import java.util.List;
+import javax.swing.DefaultCellEditor;
+import javax.swing.JCheckBox;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
+import javax.swing.SwingConstants;
+import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumn;
+import javax.swing.table.TableColumnModel;
+import model.PublisherDTO;
+import model.PublisherTableDTO;
+
+
+/**
+ *
+ * @author yj
+ */
+public class PublisherGUI extends javax.swing.JFrame implements ActionListener{
+    private PublisherDAO Dao;
+    private String[] colNames = {"선택", "사업자번호", "출판사이름", "회사번호", "담당자이름", "담당자번호", "계약건수", "최초계약일"};
+    private DefaultTableModel model = new DefaultTableModel();
+    private String puid;  
+
+    /**
+     * Creates new form PublisherGUI
+     */
+    public PublisherGUI() {
+        initComponents();
+        init();
+        addEvent();
+        setLocationRelativeTo(null); //가운데 배치
+    }
+
+    private void init() {
+        this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        try {
+            showAll();
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }     
+    }
+
+    private void addEvent() {
+        bt_showall.addActionListener(this);
+        bt_search.addActionListener(this);
+        bt_add.addActionListener(this);
+        bt_edit.addActionListener(this);
+        bt_delete.addActionListener(this);
+        //tf_serch.addActionListener(this);
+        //cb_search.addItemListener(this);    
+    }
+
+    @Override
+    public void actionPerformed(ActionEvent e) {
+     if (e.getSource() == bt_showall) {//전체조회
+            try {
+                showAll();
+            } catch (SQLException ex) {
+                ex.printStackTrace();
+            }
+            return;
+        } else if (e.getSource() == bt_delete) {//삭제
+            List<String> arr = getCheckId();
+
+            if (arr.size() > 0) {
+                int answer = JOptionPane.showConfirmDialog(this, arr.size() + "건을 삭제하시겠습니까?", "삭제 확인",
+                        JOptionPane.YES_NO_OPTION);
+                if (answer == JOptionPane.YES_OPTION) {
+                    try {
+                        delete(arr);
+                    } catch (SQLException ex) {
+                        ex.printStackTrace();
+                    }
+                } else {
+                    System.out.println("삭제 취소됨.");
+                }
+            } else {
+                JOptionPane.showMessageDialog(this, "삭제할 항목 하나를 선택하세요.");
+                return;
+            }
+        } else if (e.getSource() == bt_edit) {//수정
+            List<String> arr = getCheckId();
+            //체크 선택 
+            if (arr.size() == 0) {
+                JOptionPane.showMessageDialog(this, "수정할 항목을 선택해주세요");
+                return;
+            } else if (arr.size() > 1) {//여러개 선택했을때
+                JOptionPane.showMessageDialog(this, "수정할 항목을 하나만 선택해주세요");
+                return;
+            } else  {
+                // 수정할 항목을 1개만 선택했을때
+                // 해당 pk 값 팝업에 전달
+                String a = arr.get(0);
+                PublisherEdit publisherEdit = new PublisherEdit(a);
+                publisherEdit.setVisible(true);
+
+            }
+        } else if (e.getSource() == bt_add) { //추가
+            PublisherAdd publisherAdd = new PublisherAdd();
+            publisherAdd.setVisible(true);
+        } else if (e.getSource() == tf_search || e.getSource() == bt_search) {//검색
+            // 사용자로 입력받기
+            String serchStr = tf_search.getText();
+
+            if (serchStr == null || serchStr.isEmpty()) {
+                JOptionPane.showMessageDialog(this, "검색어를 입력해주세요");
+                tf_search.requestFocus();
+                return;
+            }
+            if (cb_search.getSelectedIndex() == 1) {
+                try {
+                    searchPuname();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            } else if (cb_search.getSelectedIndex() == 2) {
+                try {
+                    searchPumanager();
+                } catch (SQLException ex) {
+                    ex.printStackTrace();
+                }
+            }else if (cb_search.getSelectedIndex() == 0) {
+                JOptionPane.showMessageDialog(this, "검색 분류를 선택하세요.");
+            }
+
+        }
+    }
+    
+    /**
+     * This method is called from within the constructor to initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is always
+     * regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jTabbedPane1 = new javax.swing.JTabbedPane();
+        jPanel1 = new javax.swing.JPanel();
+        cb_search = new javax.swing.JComboBox<>();
+        tf_search = new javax.swing.JTextField();
+        jScrollPane3 = new javax.swing.JScrollPane();
+        JTable1 = new javax.swing.JTable();
+        bt_search = new javax.swing.JButton();
+        bt_add = new javax.swing.JButton();
+        bt_edit = new javax.swing.JButton();
+        bt_delete = new javax.swing.JButton();
+        bt_showall = new javax.swing.JButton();
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("거래처관리");
+
+        cb_search.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "검색", "출판사명", "담당자명" }));
+
+        JTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "선택", "번호", "출판사명", "회사번호", "담당자명", "연락처", "계약건수", "최초계약일"
+            }
+        ));
+        JTable1.setCellSelectionEnabled(true);
+        JTable1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        JTable1.setDragEnabled(true);
+        JTable1.setRowHeight(25);
+        JTable1.setShowGrid(true);
+        jScrollPane3.setViewportView(JTable1);
+
+        bt_search.setText("검색");
+        bt_search.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_searchActionPerformed(evt);
+            }
+        });
+
+        bt_add.setText("추가");
+
+        bt_edit.setText("수정");
+        bt_edit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_editActionPerformed(evt);
+            }
+        });
+
+        bt_delete.setText("삭제");
+
+        bt_showall.setText("전체 조회");
+        bt_showall.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bt_showallActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(39, 39, 39)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane3)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(cb_search, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(tf_search, javax.swing.GroupLayout.PREFERRED_SIZE, 314, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bt_search)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(bt_add)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(bt_showall, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                .addComponent(bt_edit)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(bt_delete)))))
+                .addGap(39, 39, 39))
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(cb_search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(tf_search, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(bt_showall)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(bt_search)
+                            .addComponent(bt_add)
+                            .addComponent(bt_edit)
+                            .addComponent(bt_delete))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 338, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(30, 30, 30))
+        );
+
+        jTabbedPane1.addTab("거래처관리", jPanel1);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jTabbedPane1)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 510, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, 0))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void bt_searchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_searchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_searchActionPerformed
+
+    private void bt_editActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_editActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_editActionPerformed
+
+    private void bt_showallActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bt_showallActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_bt_showallActionPerformed
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String args[]) {
+        /* Set the Nimbus look and feel */
+        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
+        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
+         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
+         */
+        try {
+            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (ClassNotFoundException ex) {
+            java.util.logging.Logger.getLogger(PublisherGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            java.util.logging.Logger.getLogger(PublisherGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            java.util.logging.Logger.getLogger(PublisherGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+            java.util.logging.Logger.getLogger(PublisherGUI.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+        }
+        //</editor-fold>
+
+        /* Create and display the form */
+        java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+               new PublisherGUI().setVisible(true);
+            }
+        });
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable JTable1;
+    private javax.swing.JButton bt_add;
+    private javax.swing.JButton bt_delete;
+    private javax.swing.JButton bt_edit;
+    private javax.swing.JButton bt_search;
+    private javax.swing.JButton bt_showall;
+    private javax.swing.JComboBox<String> cb_search;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane3;
+    private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextField tf_search;
+    // End of variables declaration//GEN-END:variables
+
+    //전체값 출력
+    private void showAll() throws SQLException {
+        //1. 사용자 값 입력 받기
+        //2. sql 로직 처리
+        Dao = new PublisherDAO();
+        List<PublisherDTO> list = Dao.showAllPublisher();
+
+        //3. 화면 출력
+        Object[][] data = new Object[list.size()][colNames.length];
+        for (int i = 0; i < list.size(); i++) {//1,2,3,4,5,....
+            //list의 크기만큼 반복하면서
+            //list에서 dto를 꺼낸다
+            PublisherDTO dto = list.get(i);
+            // private String[] colNames ={"선택","사업자번호","출력사이름","회사번호","담당자이름","담당자번호","계약건수","최초계약일"};
+            data[i][0] = false;
+            data[i][1] = dto.getPuId();
+            data[i][2] = dto.getPuName();
+            data[i][3] = dto.getPuTel();
+            data[i][4] = dto.getPuManager();
+            data[i][5] = dto.getPuHp();
+
+            String puId = dto.getPuId();
+            PublisherTableDTO puDto = Dao.getPublisherInfo(puId);
+
+            data[i][6] = puDto.getCount();
+            data[i][7] = puDto.getFirstConDate();
+
+        }
+        model.setDataVector(data, colNames);
+        JTable1.setModel(model);
+        columnSize();
+
+        //체크박스
+        DefaultTableCellRenderer renderer = new PublisherGUI.MyDefaultTableCellRenderer();
+        JTable1.getColumn("선택").setCellRenderer(renderer);
+        JTable1.getColumn("선택").setCellEditor(new DefaultCellEditor(new JCheckBox()));
+
+    }//showAll
+
+    //삭제
+    private void delete(List<String> arr) throws SQLException {
+        //1 사용자 값 받기
+        //2 sql 로직처리
+        int result = Dao.delete(arr);
+        //3 화면 출력
+        JOptionPane.showMessageDialog(this, result + "건이 삭제 완료 되었습니다.");
+        showAll();
+    }//delete
+
+    //출판사 조회
+    public void searchPuname() throws SQLException {
+        //1. 사용자 값 입력 받기
+        String serchText = tf_search.getText();
+        //2. sql 로직 처리
+        
+        Dao = new PublisherDAO();
+        List<PublisherDTO> list = Dao.searchPuname(serchText);
+
+        //3. 화면 출력
+        Object[][] data = new Object[list.size()][colNames.length];
+        for (int i = 0; i < list.size(); i++) {//1,2,3,4,5,....
+            //list의 크기만큼 반복하면서
+            //list에서 dto를 꺼낸다
+            PublisherDTO dto = list.get(i);
+            // private String[] colNames ={"선택","사업자번호","출력사이름","회사번호","담당자이름","담당자번호","계약건수","최초계약일"};
+            data[i][0] = false;
+            data[i][1] = dto.getPuId();
+            data[i][2] = dto.getPuName();
+            data[i][3] = dto.getPuTel();
+            data[i][4] = dto.getPuManager();
+            data[i][5] = dto.getPuHp();
+
+            String puId = dto.getPuId();
+            System.out.println(puId);
+            PublisherTableDTO puDto = Dao.getPublisherInfo(puId);
+
+            data[i][6] = puDto.getCount();
+            data[i][7] = puDto.getFirstConDate();
+
+        }
+        model.setDataVector(data, colNames);
+        JTable1.setModel(model);
+        columnSize();
+
+        //체크박스
+        DefaultTableCellRenderer renderer = new PublisherGUI.MyDefaultTableCellRenderer();
+        JTable1.getColumn("선택").setCellRenderer(renderer);
+        JTable1.getColumn("선택").setCellEditor(new DefaultCellEditor(new JCheckBox()));
+
+    }
+
+    //테이블값 출력
+    private void showTable(List arr) throws SQLException {
+        List<PublisherDTO> list = arr;
+        Object[][] data = new Object[list.size()][colNames.length];
+        for (int i = 0; i < list.size(); i++) {
+            PublisherDTO dto = list.get(i);
+
+            data[i][0] = false;
+            data[i][1] = dto.getPuId();
+            data[i][2] = dto.getPuName();
+            data[i][3] = dto.getPuTel();
+            data[i][4] = dto.getPuManager();
+            data[i][5] = dto.getPuHp();
+
+            String puId = dto.getPuId();
+            PublisherTableDTO puDto = Dao.getPublisherInfo(puId);
+
+            data[i][6] = puDto.getCount();
+            data[i][7] = puDto.getFirstConDate();
+
+            model.setDataVector(data, colNames);
+            JTable1.setModel(model);
+            columnSize();
+        }
+    }//showTable
+
+    //담당자명으로 검색
+    public void searchPumanager() throws SQLException {
+        //1. 사용자 값 입력 받기
+        String serchText = tf_search.getText();
+        //2. sql 로직 처리
+        
+        Dao = new PublisherDAO();
+        List<PublisherDTO> list = Dao.searchPumanager(serchText);
+
+        //3. 화면 출력
+        Object[][] data = new Object[list.size()][colNames.length];
+        for (int i = 0; i < list.size(); i++) {//1,2,3,4,5,....
+            //list의 크기만큼 반복하면서
+            //list에서 dto를 꺼낸다
+            PublisherDTO dto = list.get(i);
+            // private String[] colNames ={"선택","사업자번호","출력사이름","회사번호","담당자이름","담당자번호","계약건수","최초계약일"};
+            data[i][0] = false;
+            data[i][1] = dto.getPuId();
+            data[i][2] = dto.getPuName();
+            data[i][3] = dto.getPuTel();
+            data[i][4] = dto.getPuManager();
+            data[i][5] = dto.getPuHp();
+
+            String puId = dto.getPuId();
+            System.out.println(puId);
+            PublisherTableDTO puDto = Dao.getPublisherInfo(puId);
+
+            data[i][6] = puDto.getCount();
+            data[i][7] = puDto.getFirstConDate();
+
+        }
+        model.setDataVector(data, colNames);
+        JTable1.setModel(model);
+        columnSize();
+
+        //체크박스
+        DefaultTableCellRenderer renderer = new PublisherGUI.MyDefaultTableCellRenderer();
+        JTable1.getColumn("선택").setCellRenderer(renderer);
+        JTable1.getColumn("선택").setCellEditor(new DefaultCellEditor(new JCheckBox()));
+
+    }//serchPumanager
+
+
+//----------------------------------------설정값----------------------------------------------//
+//체크박스 설정   
+    class MyDefaultTableCellRenderer extends DefaultTableCellRenderer {
+
+        @Override
+        public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected,
+                boolean hasFocus, int row, int column) {
+            /*JTable table : 현재 작업 중인 JTable
+            Object value : 현재 작업 중인 JTable의 셀객체
+            int row : 현재 작업 중인 row번호
+            int column : 현재 작업 중인 column번호*/
+
+            if (column == 0) {
+                JCheckBox comp = null;
+                comp = new JCheckBox();
+                comp.setSelected(((Boolean) value).booleanValue());
+                comp.setHorizontalAlignment(SwingConstants.CENTER);//가운데 정렬
+                return comp;
+            } else {
+                return null;
+            }
+        }
+    }//class
+
+//체크박스에 pk값 저장해서 받아오기
+    private List<String> getCheckId() {
+        List<String> CheckArr = new ArrayList<>();
+        List<Integer> checkRowNum = new ArrayList<>();
+
+        //테이블 전체 행을 돌면서 체크된 거 확인
+        for (int i = 0; i < model.getRowCount(); i++) {
+            boolean bool = (boolean) model.getValueAt(i, 0);
+            //체크되어 있으면 해당 행번호 저장
+            if (bool == true) {
+                checkRowNum.add(i);
+            }
+        }//for         
+
+        //체크된 만큼 반복 하면서
+        for (int i = 0; i < checkRowNum.size(); i++) {
+            //해당 행의 pk값을 CheckArr에 저장
+            CheckArr.add((String) model.getValueAt(checkRowNum.get(i), 1));
+            System.out.println(checkRowNum.get(i));
+            //System.out.println(i+"inNo="+ model.getValueAt(i, 1));      
+        }
+        return CheckArr;
+
+    }//getEditData
+
+    //입고 테이블 사이즈 조절
+    public void columnSize() {
+
+        TableColumn col1 = JTable1.getColumnModel().getColumn(0);
+        TableColumn col2 = JTable1.getColumnModel().getColumn(1);
+        TableColumn col3 = JTable1.getColumnModel().getColumn(2);
+        TableColumn col4 = JTable1.getColumnModel().getColumn(3);
+        TableColumn col5 = JTable1.getColumnModel().getColumn(4);
+        TableColumn col6 = JTable1.getColumnModel().getColumn(5);
+        TableColumn col7 = JTable1.getColumnModel().getColumn(6);
+        TableColumn col8 = JTable1.getColumnModel().getColumn(7);
+
+        col1.setPreferredWidth(20);
+        col2.setPreferredWidth(80);
+        col3.setPreferredWidth(80);
+        col4.setPreferredWidth(80);
+        col5.setPreferredWidth(60);
+        col6.setPreferredWidth(80);
+        col7.setPreferredWidth(40);
+        col8.setPreferredWidth(60);
+        tableCellCenter(JTable1);//테이블 내용 가운데 정렬
+
+    }
+
+    // 테이블 가운데 정렬하기
+    public void tableCellCenter(JTable t) {
+
+        //테이블 해더 가운데 정렬
+        DefaultTableCellRenderer renderer = (DefaultTableCellRenderer) t.getTableHeader().getDefaultRenderer();
+        renderer.setHorizontalAlignment(SwingConstants.CENTER);
+        t.getTableHeader().setDefaultRenderer(renderer);
+
+        //셀 가운데 정렬
+        DefaultTableCellRenderer dtcr = new DefaultTableCellRenderer();
+        dtcr.setHorizontalAlignment(SwingConstants.CENTER);
+
+        TableColumnModel tcm = t.getColumnModel();
+
+        //컬럼 갯수만큼 컬럼 가져와 for문으로 각 행에 대한 정렬
+        for (int i = 0; i < tcm.getColumnCount(); i++) {
+            tcm.getColumn(i).setCellRenderer(dtcr);
+        }
+    } 
+    
+
+}
