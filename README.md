@@ -1,19 +1,32 @@
 # 👩‍💻1차 세미 프로젝트 <이젠 북스 : 서점 내부 ERP 시스템>
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/c331290c-26a9-4ebd-80ff-c81247862091)
 
+
 ## 📌목차
-1. 기획 의도 및 목표
-2. 제작 일정
-3. 개발 환경
-4. 멤버 및 역할 분담
-5. 메뉴 구성
-6. 주요 기능
-7. [개선 방향 및 느낀점](#%EF%B8%8F개선-방향-및-느낀점)
+[1. 기획 의도 및 목표](#%EF%B8%8F-기획의도-및-목표)
+
+[2. 제작 일정](#%EF%B8%8F제작-일정2023-5-22--2023-6-9)
+
+[3. 개발 환경](#%EF%B8%8F개발-환경)
+
+[4. DB 설계](#%EF%B8%8Fdb설계)
+
+[5. 멤버 및 역할 분담](#%EF%B8%8F멤버-및-역할-분담)
+
+[6. 메뉴 구성](#%EF%B8%8F메뉴-구성)
+
+[7. 핵심 구현 기능](#%EF%B8%8F핵심-구현-기능)
+
+[8.기능 소개](#%EF%B8%8F기능-소개)
+
+[9. 개선 방향](#%EF%B8%8F개선-방향)
+
 
 ## ✔️ 기획의도 및 목표
    - JAVA와 DB를 최대한 활용하여 서점의 비지니스 프로세스를 관리하는 ERP 시스템을 구현
    - 상품 계약, 사원관리, 거래처 관리, 물류, 판매 등 기업 내부의 전반적인 업무를 관리
    - 상품의 판매 기록을 기반으로 판매 통계를 재공하여 기업의 상품 개발 및 물류를 효율적으로 관리
+
 
 ## ✔️제작 일정(2023. 5. 22 ~ 2023. 6. 9)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/ec7daa77-c6a2-4ed9-b8eb-d65e17f1151b)
@@ -21,6 +34,7 @@
 
 ## ✔️개발 환경
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/677e1442-fafd-4781-bea1-971f7c091a97)
+
 
 ## ✔️DB설계
 ### 📍논리
@@ -63,16 +77,19 @@
   
 👪공통    
 - 자료조사, PPT작성, DB설계 및 작성
-    
 
 
 ## ✔️메뉴 구성
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/d5e66f31-b89a-42d7-ac90-45f62ee43dec)
+<BR>
 
 
-## ✔️주요 기능
+## ✔️핵심 구현 기능
 
-### 로그인
+
+
+## ✔️기능 소개
+### ▶️로그인
 ##### 👉 로그인 유효성 검사 
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/098260fa-03bc-466e-b45b-a3a606893818)
 
@@ -82,18 +99,18 @@
 
 
 ---
-### 로그아웃
+### ▶️로그아웃
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/0d845e75-6c17-40d2-8f1a-688cb2ba925c)
 ###### [[멤버 및 역할 분담👆]](#%EF%B8%8F멤버-및-역할-분담)
 
 ---
-### 메인 화면
+### ▶️메인 화면
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/3ace27bf-d878-4469-ae00-4e9236984a99)
 ###### [[멤버 및 역할 분담👆]](#%EF%B8%8F멤버-및-역할-분담)
 
 
 ---
-### 사원 관리
+### ▶️사원 관리
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/ee239fd2-11a1-46f6-9b14-b72858c75002)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/e1e780c0-81f3-45ac-b45b-b8d1991e7b50)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/0dc67d23-3b1a-4136-b482-80d34f00d3d4)
@@ -105,7 +122,7 @@
 
 
 ---
-### 부서 관리
+### ▶️부서 관리
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/0de47817-c225-41b7-8444-7e1c3798189b)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/a96fe9a9-c2a4-49b7-a8da-ed7f9ede4cdf)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/5888a28e-5c8a-4d76-aca9-050a589569d7)
@@ -117,7 +134,7 @@
 
 
 ---
-### 출판사 관리
+### ▶️출판사 관리
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/06f310d0-f8d0-4ce9-90e1-61c5d8ca8eb4)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/81580d7c-5720-4402-bdf8-767a226e418d)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/34b4d23e-fbb6-4082-ad56-94309fcc483e)
@@ -131,7 +148,7 @@
 
 
 ---
-### 도서 관리
+### ▶️도서 관리
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/a205311b-2acf-45b8-b945-90f65a4b29f5)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/b1c68857-ebcf-4064-8225-b72c46c51ff4)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/4e8d024f-2833-4244-9338-0d19b1c6dd16)
@@ -140,7 +157,7 @@
 
 
 ---
-### 카테고리 관리
+### ▶️카테고리 관리
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/a63eb11f-3897-47cb-b0db-c79792800bab)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/26954533-3156-411e-aa16-7638c0a430f9)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/ea0c8c0e-0258-47ee-981a-bd2d1d8b3660)
@@ -149,7 +166,7 @@
 
 
 ---
-### 계약 관리
+### ▶️계약 관리
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/6999d25e-1dd8-474c-83e3-5caf668f7838)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/07f64be8-0973-4eaf-a8f2-73f0735e6fd9)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/156d4d5a-5d14-452a-b6b3-641a82e659d2)
@@ -157,7 +174,7 @@
 ###### [[멤버 및 역할 분담👆]](#%EF%B8%8F멤버-및-역할-분담)
 
 ---
-### 입고 관리
+### ▶️입고 관리
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/7c7db99c-4495-40a0-9cec-873a970e7211)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/a3a6c6e9-0300-48e7-a013-9aedeffbd50d)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/69ee3b26-6ed5-420c-80ae-a2c29149c8cf)
@@ -176,7 +193,7 @@
 
 
 ---
-### 재고 관리
+### ▶️재고 관리
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/383cab1f-0b39-48f1-83ad-4b28a07cc446)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/23b44d8c-80b1-4d3d-953e-0cb4ba830c92)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/2ff5ce27-d2cf-46d9-9c59-781b94fa6a30)
@@ -184,7 +201,7 @@
 
 
 ---
-### 판매 관리
+### ▶️판매 관리
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/b2b8981f-3eb8-417c-a554-d8b3363a5aa0)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/e4154b5b-7d8d-45d1-baea-ad14de052512)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/65f749bc-9745-48bd-a974-7e7ba9052b0f)
@@ -195,7 +212,7 @@
 
 
 ---
-### 환불 관리
+### ▶️환불 관리
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/3fe4be0f-f88f-43d7-af1f-7185743c00db)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/5d1cc6ae-aea2-422d-98b2-f085ef20dcd4)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/fa2419d9-fec9-4f38-aaa1-1dec6b855a93)
@@ -203,7 +220,7 @@
 
 
 ---
-### 통계
+### ▶️통계
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/50b9c937-c36f-4e00-86fe-c3377e821d9a)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/49fa28b9-8963-47d7-acf1-16277b208fbd)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/b6628810-0eab-492e-bd7c-440d3a92576f)
@@ -214,12 +231,8 @@
 ###### [[멤버 및 역할 분담👆]](#%EF%B8%8F멤버-및-역할-분담)
 
 
-## ✔️개선 방향 및 느낀점
-
-
+## ✔️개선 방향
 ### 👉 프로젝트 개선 방향
-
-
     ☑️ 통계의 그래프화 
      - 통계 데이터의 시각화를 통해 사용자 편의성을 증대한다.
 
@@ -236,6 +249,8 @@
      ☑️ 판매의 기능 확장
        - 위의 "입고 & 재고 기능 확장" 기능을 통해 입력 된 바코드 정보를 추가하여 해당 상품의 판매를 확인할 수 있게 한다.
        - 결제 정보를 추가하여 어떤 결제 방식으로 결제 되었는지를 확인할 수 있게 한다.
+
+### 
 
      
 
