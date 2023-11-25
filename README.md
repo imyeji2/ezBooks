@@ -41,7 +41,7 @@
 
   
 👩‍💻조은정
-- [출판 관리](#출판-관리)
+- [출판사 관리](#출판사-관리)
 - [통계](#통계)
   
 
@@ -72,20 +72,24 @@
 
 ## ✔️주요 기능
 
-### 로그인 [돌아가기](#%EF%B8%8F멤버-및-역할-분담)
+### 로그인
 ##### 👉 로그인 유효성 검사 
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/098260fa-03bc-466e-b45b-a3a606893818)
+
 ##### 👉 로그인 성공 
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/fee7eee3-0936-47bc-b629-9cf397e24df8)
+###### [[멤버 및 역할 분담👆]](#%EF%B8%8F멤버-및-역할-분담)
 
 
 ---
 ### 로그아웃
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/0d845e75-6c17-40d2-8f1a-688cb2ba925c)
+###### [[멤버 및 역할 분담👆]](#%EF%B8%8F멤버-및-역할-분담)
 
 ---
 ### 메인 화면
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/3ace27bf-d878-4469-ae00-4e9236984a99)
+###### [[멤버 및 역할 분담👆]](#%EF%B8%8F멤버-및-역할-분담)
 
 
 ---
@@ -97,6 +101,7 @@
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/6df0902b-357b-4761-af1e-d8abd1d69506)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/de9f5419-d2a8-4027-afbf-9c6744aa98b2)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/716946c5-594b-4458-bfaf-3c76bad1e009)
+###### [[멤버 및 역할 분담👆]](#%EF%B8%8F멤버-및-역할-분담)
 
 
 ---
@@ -108,10 +113,11 @@
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/b3bf6bc0-89ee-488a-a808-b5ab426ad3fd)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/7be71134-003b-4cd3-96c0-767c3c2a7ba9)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/3a625332-295b-4525-8dbe-d94a7a7f095b)
+###### [[멤버 및 역할 분담👆]](#%EF%B8%8F멤버-및-역할-분담)
 
 
 ---
-### 거래처 관리
+### 출판사 관리
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/06f310d0-f8d0-4ce9-90e1-61c5d8ca8eb4)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/81580d7c-5720-4402-bdf8-767a226e418d)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/34b4d23e-fbb6-4082-ad56-94309fcc483e)
@@ -121,6 +127,7 @@
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/ad55bf85-bda7-4d9f-989e-9bbbb78a6eee)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/e09ebf03-4712-4ea8-aa85-a624a56d6926)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/49a9e8c6-8d1c-4fdb-baab-e371af04b8e7)
+###### [[멤버 및 역할 분담👆]](#%EF%B8%8F멤버-및-역할-분담)
 
 
 ---
@@ -129,6 +136,7 @@
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/b1c68857-ebcf-4064-8225-b72c46c51ff4)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/4e8d024f-2833-4244-9338-0d19b1c6dd16)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/1797e69b-399f-422e-ba64-ec8d5a3ea27b)
+###### [[멤버 및 역할 분담👆]](#%EF%B8%8F멤버-및-역할-분담)
 
 
 ---
@@ -137,6 +145,7 @@
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/26954533-3156-411e-aa16-7638c0a430f9)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/ea0c8c0e-0258-47ee-981a-bd2d1d8b3660)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/f41142a4-f4f3-4e7e-81b8-dffb5d154955)
+###### [[멤버 및 역할 분담👆]](#%EF%B8%8F멤버-및-역할-분담)
 
 
 ---
@@ -145,7 +154,7 @@
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/07f64be8-0973-4eaf-a8f2-73f0735e6fd9)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/156d4d5a-5d14-452a-b6b3-641a82e659d2)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/ee374c10-d3b2-47d7-80a1-c6ee01e0db8a)
-
+###### [[멤버 및 역할 분담👆]](#%EF%B8%8F멤버-및-역할-분담)
 
 ---
 ### 입고 관리
@@ -163,6 +172,7 @@
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/4539fede-fc8a-4db9-8eec-f9e5ab24c8a1)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/690ade93-e64c-43ad-832f-037b102d7a37)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/de1f4d8d-c2a7-4aae-80e8-10d4563cb0e9)
+###### [[멤버 및 역할 분담👆]](#%EF%B8%8F멤버-및-역할-분담)
 
 
 ---
@@ -170,6 +180,7 @@
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/383cab1f-0b39-48f1-83ad-4b28a07cc446)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/23b44d8c-80b1-4d3d-953e-0cb4ba830c92)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/2ff5ce27-d2cf-46d9-9c59-781b94fa6a30)
+###### [[멤버 및 역할 분담👆]](#%EF%B8%8F멤버-및-역할-분담)
 
 
 ---
@@ -180,6 +191,7 @@
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/9cdd514f-4b3e-4f26-9027-dd4242709866)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/97525c98-dc06-4c27-81d5-1ddc05e2ffc1)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/25ecbbfa-af02-499d-ae71-b61a7015d9d4)
+###### [[멤버 및 역할 분담👆]](#%EF%B8%8F멤버-및-역할-분담)
 
 
 ---
@@ -187,6 +199,7 @@
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/3fe4be0f-f88f-43d7-af1f-7185743c00db)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/5d1cc6ae-aea2-422d-98b2-f085ef20dcd4)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/fa2419d9-fec9-4f38-aaa1-1dec6b855a93)
+###### [[멤버 및 역할 분담👆]](#%EF%B8%8F멤버-및-역할-분담)
 
 
 ---
@@ -198,7 +211,7 @@
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/33b03c14-94d9-472f-9e61-f86d4e5114b4)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/fdb517e1-ad8d-4e37-abbd-26012916fda4)
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/36fd6bdd-1bb1-4d3b-b421-26b0f1af22ef)
-
+###### [[멤버 및 역할 분담👆]](#%EF%B8%8F멤버-및-역할-분담)
 
 
 ## ✔️개선 방향 및 느낀점
