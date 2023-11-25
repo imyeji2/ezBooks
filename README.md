@@ -101,7 +101,7 @@
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/098260fa-03bc-466e-b45b-a3a606893818)
 
 ##### 👉 로그인 성공 
-![image](https://github.com/imyeji2/ezBooks/assets/137904402/fee7eee3-0936-47bc-b629-9cf397e24df8
+![image](https://github.com/imyeji2/ezBooks/assets/137904402/fee7eee3-0936-47bc-b629-9cf397e24df8)
 ###### [[멤버 및 역할 분담👆]](#%EF%B8%8F멤버-및-역할-분담)
 
 
