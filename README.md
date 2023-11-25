@@ -33,35 +33,35 @@
 👩‍💻이예지(팀장)
 - [로그인](#로그인)
 - [로그아웃](#로그아웃)
-- [메뉴화면]
-- [입고관리]
-- [재고관리]
-- [통계]
+- [메인 화면](#메인-화면)
+- [입고 관리](#입고-관리)
+- [재고 관리](#재고-관리)
+- [통계](#통계)
 
   
 👩‍💻조은정
-- [출판관리]
-- [통계]
+- [출판 관리](#출판-관리)
+- [통계](#통계)
   
 
 👩‍💻한예린
-- [사원관리]
-- [부서관리]
+- [사원 관리](#사원-관리)
+- [부서 관리](#부서-관리)
 
 
 👨‍💻박희수
-- [판매관리]
-- [환불관리]
+- [판매관리](#판매관리)
+- [환불관리](#환불관리)
 
 
 👨‍💻김민기
-- [도서관리]
-- [카테고리관리]
-- [계약관리]
+- [도서관리](#도서관리)
+- [카테고리관리](카테고리관리)
+- [계약관리](#계약관리)
 
-🧑‍💻공통    
-- 자료조사
-- p
+  
+👪공통    
+- 자료조사, PPT작성, DB설계 및 작성
     
 
 
@@ -81,6 +81,42 @@
 ---
 ### 로그아웃
 ![image](https://github.com/imyeji2/ezBooks/assets/137904402/0d845e75-6c17-40d2-8f1a-688cb2ba925c)
+
+---
+### 메인 화면
+![image](https://github.com/imyeji2/ezBooks/assets/137904402/3ace27bf-d878-4469-ae00-4e9236984a99)
+
+
+---
+### 사원 관리
+![image](https://github.com/imyeji2/ezBooks/assets/137904402/ee239fd2-11a1-46f6-9b14-b72858c75002)
+![image](https://github.com/imyeji2/ezBooks/assets/137904402/e1e780c0-81f3-45ac-b45b-b8d1991e7b50)
+![image](https://github.com/imyeji2/ezBooks/assets/137904402/0dc67d23-3b1a-4136-b482-80d34f00d3d4)
+![image](https://github.com/imyeji2/ezBooks/assets/137904402/fd918d8c-af3a-46af-8175-333a2bf712ab)
+![image](https://github.com/imyeji2/ezBooks/assets/137904402/6df0902b-357b-4761-af1e-d8abd1d69506)
+![image](https://github.com/imyeji2/ezBooks/assets/137904402/de9f5419-d2a8-4027-afbf-9c6744aa98b2)
+![image](https://github.com/imyeji2/ezBooks/assets/137904402/716946c5-594b-4458-bfaf-3c76bad1e009)
+
+
+### 부서 관리
+![image](https://github.com/imyeji2/ezBooks/assets/137904402/0de47817-c225-41b7-8444-7e1c3798189b)
+![image](https://github.com/imyeji2/ezBooks/assets/137904402/a96fe9a9-c2a4-49b7-a8da-ed7f9ede4cdf)
+![image](https://github.com/imyeji2/ezBooks/assets/137904402/5888a28e-5c8a-4d76-aca9-050a589569d7)
+![image](https://github.com/imyeji2/ezBooks/assets/137904402/b385b48a-1b30-4275-abf7-64a462be8037)
+![image](https://github.com/imyeji2/ezBooks/assets/137904402/b3bf6bc0-89ee-488a-a808-b5ab426ad3fd)
+![image](https://github.com/imyeji2/ezBooks/assets/137904402/7be71134-003b-4cd3-96c0-767c3c2a7ba9)
+![image](https://github.com/imyeji2/ezBooks/assets/137904402/3a625332-295b-4525-8dbe-d94a7a7f095b)
+
+
+
+
+
+
+
+---
+### 거래처 관리
+
+
 
 
 
